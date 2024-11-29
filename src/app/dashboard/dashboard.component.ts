@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +14,7 @@ export class DashboardComponent {
   logout(){
     this._router.navigateByUrl('/login');
 
-    sessionStorage.removeItem("token");
+    sessionStorage.removeItem('token');
   }
 
 }

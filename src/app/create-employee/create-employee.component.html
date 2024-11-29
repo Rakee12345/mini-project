@@ -1,0 +1,57 @@
+<div class="labels">
+  <form action="" [formGroup]="createemployee">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name" />
+    <br /><br />
+    <label for="">Company:</label>
+    <input type="text" formControlName="company" />
+    <br /><br />
+    <label for="">Role:</label>
+    <input type="text" formControlName="role" />
+    <br /><br />
+    <label for="">Package:</label>
+    <input type="number" formControlName="package" />
+    <br /><br />
+    <label for="">Email:</label>
+    <input type="email" formControlName="email" />
+    <br /><br />
+    <label for="">DOB:</label>
+    <input type="date" formControlName="dob" />
+    <br /><br />
+
+    <div formGroupName="address">
+      <label for="">addressLine:</label>
+      <input type="text" formControlName="addressline" />
+      <br /><br />
+      <label for="">city:</label>
+      <input type="text" formControlName="city" />
+      <br /><br />
+      <label for="">State:</label>
+      <input type="text" formControlName="state" />
+      <br /><br />
+      <label for="">Pincode:</label>
+      <input type="number" formControlName="pincode" />
+      <br /><br />
+    </div>
+
+    <label for="">Hikes</label>
+    <button class="btn btn-warning" (click)="addhikes()">ADDHikes</button>
+    
+    <div formArrayName="hikes">
+      <div *ngFor="let hike of hikesFromArray.controls;let i=index">
+        <div formGroupName="{{i}}">
+          <h2>Hikes {{i+1}}</h2>
+    <label for="">Year:</label>
+    <input type="number" formControlName="year" />
+    <br /><br />
+    <label for="">Percentage:</label>
+    <input type="number" formControlName="percentage" />
+    <br /><br />
+    <button class="btn btn-danger" (click)="deletehikes(i)">Delete</button>
+  </div>
+</div>
+</div>
+
+<button (click)="submit()">submit</button>
+  </form>
+</div>

@@ -1,17 +1,14 @@
-<div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#Create Employee">Create Employee</a>
-    <a href="All Employees">All Employees</a>
-    <div>
-        
-    </div>
+<div>
+  <div class="topnav">
+    <a routerLink="home">Home</a>
+    <a routerLink="createemployee">Create Employee</a>
+    <a routerLink="all-employees">All Employees</a>
     
     
-    
+
+    <button (click)="logout()" mat-raised-button color="accent">Logout</button>
   </div>
   <div>
-    <h1>Welcome to My Angular App!</h1>
-    <p>This is the main page.</p>
-    <p>You can navigate through the menu above to explore different sections.</p>
+    <router-outlet></router-outlet>
   </div>
-  <button (click)="logout()" mat-raised-button color="active" class="m-20">Logout</button>
+</div>

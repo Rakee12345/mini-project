@@ -11,13 +11,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GuardsCheckStart } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { HomeComponent } from './home/home.component';
+import { AllEmployeesComponent } from './all-employees/all-employees.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginpageComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateEmployeeComponent,
+    HomeComponent,
+    AllEmployeesComponent
   ],
   imports: [
     BrowserModule,
