@@ -1,0 +1,83 @@
+<div class="labels">
+  <form action="" [formGroup]="createemployee">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name" />
+    <div *ngIf="createemployee.get('name')?.touched && createemployee.get('name')?.invalid">
+      <p *ngIf="createemployee.get('name')?.errors?.['required']">name should be minimum 5 letters</p>
+      <p *ngIf="createemployee.get('name')?.errors?.['required']">name should be maximum 10 letters</p>
+    </div>
+    <br /><br />
+    <label for="">Company:</label>
+    <input type="text" formControlName="company" />
+    <div *ngIf="createemployee.get('company')?.touched && createemployee.get('company')?.invalid">
+    <p *ngIf="createemployee.get('company')?.errors?.['required']">name should br minimum 6 letters</p>
+    <p *ngIf="createemployee.get('company')?.errors?.['required']">name should bbe maximum 16 letters</p>
+
+    </div>
+    <br /><br />
+    <label for="">Role:</label>
+    <input type="text" formControlName="role" />
+    <br /><br />
+    <label for="">Package:</label>
+    <input type="number" formControlName="package" />
+    <br /><br />
+    <label for="">Email:</label>
+    <input type="email" formControlName="email" />
+    <br /><br />
+    <label for="">DOB:</label>
+    <input type="date" formControlName="dob" />
+    <br /><br />
+
+    <div formGroupName="address">
+      <label for="">addressLine:</label>
+      <input type="text" formControlName="addressline" />
+      <br /><br />
+      <label for="">city:</label>
+      <input type="text" formControlName="city" />
+      <br /><br />
+      <label for="">State:</label>
+      <input type="text" formControlName="state" />
+      <br /><br />
+      <label for="">Pincode:</label>
+      <input type="number" formControlName="pincode" />
+      <br /><br />
+    </div>
+
+    <label for="">Hikes</label>
+    <button class="btn btn-warning" (click)="addhikes()">ADDHikes</button>
+    <br>
+    <br>
+
+    <label for="">Work mode :</label>
+    <label for="">WFH :</label>
+    <input type="radio" name="workmode" value="WFH" formControlName="workmode">
+    <label for="">WFO :</label>
+    <input type="radio" name="workmode" value="WFO" formControlName="workmode">
+    <br>
+    <br>
+    <div *ngIf="createemployee.get('workmode')?.value=='WFH'">
+    <label for="">WIFI BILL :</label>
+    <input type="number" formControlName="wifiBill" >
+  </div>
+  <div *ngIf="createemployee.get('workmode')?.value=='WFO'">
+    <label for="">TRAVEL BILL :</label>
+    <input type="number" formControlName="travelBil">
+  </div>
+    <div formArrayName="hikes">
+      <div *ngFor="let hike of hikesFromArray.controls;let i=index">
+        <div formGroupName="{{i}}">
+          <h2>Hikes {{i+1}}</h2>
+    <label for="">Year:</label>
+    <input type="number" formControlName="year" formControlName="year"/>
+    <br /><br />
+    <label for="">Percentage:</label>
+    <input type="text" formControlName="percentage" formControlName="percentage" />
+    <br /><br />
+    <button class="btn btn-danger" (click)="deletehikes(i)">Delete</button>
+  </div>
+</div>
+</div>
+
+<button (click)="submit()" class="btn btn-info">submit</button>
+  </form>
+</div>

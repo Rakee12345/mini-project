@@ -1,1 +1,16 @@
-<p>loginpage works!</p>
+<div class="parent">
+    <div class="child">
+        <h1>Login</h1>
+        <form [formGroup]="loginForm">
+            <label for="">Email:</label>
+            <input type="email" placeholder="Email" formControlName="email">
+            <br><br>
+            <label for="">Password:</label>
+            <input type="password" placeholder="Password" formControlName="password">
+            <br><br>
+            <button (click)="login()" mat-raised-button color="primary">Login</button>
+            
+        </form>
+    </div>
+</div>
+
