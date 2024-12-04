@@ -1,12 +1,14 @@
-<div>
+<div class="container">
   <div class="topnav">
+    
     <a routerLink="home">Home</a>
     <a routerLink="createemployee">Create Employee</a>
     <a routerLink="all-employees">All Employees</a>
-    
-    
-
     <button (click)="logout()" mat-raised-button color="accent">Logout</button>
+  
+  </div>
+  <div class="child">
+    
   </div>
   <div>
     <router-outlet></router-outlet>
